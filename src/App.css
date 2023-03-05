@@ -1,42 +1,240 @@
-#root {
-  max-width: 1280px;
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 95%;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+.container-header {
+  display: flex;
+  padding-top: 20px;
+}
+
+.header-left {
+  width: 58%;
+  margin-right: auto;
+  height: 25px;
+}
+
+.header-right {
+  width: 40%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 25px;
+}
+
+.cart {
+  background-color: #A41BB9;
+  width: auto;
+  height: 30px;
+  padding: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1px;
+  cursor: pointer;
+  border: none;
+}
+
+.icon-cart {
+  margin-right: 2px;
+}
+
+.number-cart {
+  color: white;
+  font-size: 15px;
+}
+
+/* .icon-store { 
+  background-color: #892F9F;
+  padding: 5px;
+  border-radius: 5px;
+} */
+
+.logo{
+  width: 3rem;
+  height: 3rem;
+}
+
+.title-store {
+  color: #A41BB9;  
+  position: relative;
+  top: 15px;
+  height: 20px;
+  font-size: 0.8rem;
+}
+
+.separator {
+  height: 0.2px;
+  background-color: #C2C2C2;
+  opacity: 0.4;
+  margin-bottom: 15px;
+}
+
+.container-body {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.product-left {
+  width: 58%;
+  margin-right: auto;
+}
+
+.product-right {
+  width: 38%;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 6px;
+}
+
+.btn-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+}
+
+.active {
+  border: 2px solid #D282DF;
+  box-shadow: 0px 0px 4px 2px rgba(198,153,205,0.57);
+}
+
+.inactive {
+  border: 1px solid #C2C2C2;
+}
+
+.pop {
+  width: 7rem;
+  text-align: center;
+  padding: 3px;
+}
+
+.text-right {
+  color: #B5B5B5;
+  font-size: 0.7rem;
+  font-weight: 600;
+  position: relative;
+  bottom: 8px;
+}
+
+.container-detail {
+  height: 17rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.one-product {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  height: 8rem;
+}
+
+.pop-one {
+  width: 8.5rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.bar-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item-name {
+  display: flex;
+  font-weight: 100;
+  font-size: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.point {
+  height: 1rem;
+  position: relative;
+  top: 1.3rem;
+  margin: 0 5px;
+  color: gray;
+  opacity: 0.5;
 }
 
-.card {
-  padding: 2em;
+.price {
+  color: #A41BB9;
+  font-weight: 500;
 }
 
-.read-the-docs {
-  color: #888;
+.btns {
+  width: auto;
 }
+
+.btn-sub{
+  background-color: #EEEEEE;
+  border: none;
+  font-size: larger;
+  width: 25px;
+  cursor: pointer;
+}
+.btn-add{
+  background-color: #A41BB9;
+  border: none;
+  font-size: larger;
+  width: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+.description {
+  color: #909090;
+  font-size: small;
+}
+
+.stock {
+  background-color: #A41BB9;
+  color: white;
+  width: 1.8rem;
+  height: 1.8rem;
+  font-size: 0.7rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.add-cart{
+  background-color: #A41BB9;
+  width: 2.5rem;
+  position: absolute;
+  right: 100px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  height: 23px;
+}
+
+.close-product {
+  background-color: transparent;
+  width: 2.5rem;
+  position: absolute;
+  right: 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  height: 23px;
+  border: none;
+}
+
+
