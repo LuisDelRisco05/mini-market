@@ -19,7 +19,7 @@ export const data = [
   {
     id: img1,
     name: "Ironman",
-    price: 2.5,
+    price: 1.5,
     unit: 1,
     description:
       "Figura POP de Funko coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Ironman",
@@ -27,7 +27,7 @@ export const data = [
   {
     id: img2,
     name: "Spider-man",
-    price: 2.5,
+    price: 3.5,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Spider-man",
@@ -35,7 +35,7 @@ export const data = [
   {
     id: img3,
     name: "Squirtle",
-    price: 2.5,
+    price: 4.5,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Pokemon",
@@ -43,7 +43,7 @@ export const data = [
   {
     id: img4,
     name: "Sasuke",
-    price: 2.5,
+    price: 7.5,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Naruto",
@@ -51,7 +51,7 @@ export const data = [
   {
     id: img5,
     name: "Goku",
-    price: 2.5,
+    price: 10.5,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Dragon ball z",
@@ -59,7 +59,7 @@ export const data = [
   {
     id: img6,
     name: "Agumon",
-    price: 2.5,
+    price: 1,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Digimon",
@@ -67,7 +67,7 @@ export const data = [
   {
     id: img7,
     name: "Kakashi",
-    price: 2.5,
+    price: 4.5,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Naruto",
@@ -75,7 +75,7 @@ export const data = [
   {
     id: img8,
     name: "Naruto",
-    price: 2.5,
+    price: 10.5,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Naruto",
@@ -83,7 +83,7 @@ export const data = [
   {
     id: img9,
     name: "Madara",
-    price: 2.5,
+    price: 15.2,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Naruto",
@@ -91,7 +91,7 @@ export const data = [
   {
     id: img10,
     name: "Kirito",
-    price: 2.5,
+    price: 3.5,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de SAO",
@@ -99,7 +99,7 @@ export const data = [
   {
     id: img11,
     name: "Ichigo",
-    price: 2.5,
+    price: 9.8,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Bleach",
@@ -107,7 +107,7 @@ export const data = [
   {
     id: img12,
     name: "Kaneki",
-    price: 2.5,
+    price: 11.2,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Tokyo ghoul",
@@ -115,7 +115,7 @@ export const data = [
   {
     id: img13,
     name: "Eren",
-    price: 2.5,
+    price: 12.5,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Shingeki no kyojin",
@@ -123,7 +123,7 @@ export const data = [
   {
     id: img14,
     name: "Inuyasha",
-    price: 2.5,
+    price: 2.8,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Inuyasha",
@@ -131,7 +131,7 @@ export const data = [
   {
     id: img15,
     name: "Pikachu",
-    price: 2.5,
+    price: 6.8,
     unit: 1,
     description:
       "Figura coleccionable estilizada de 3 ¾ pulgadas de alto, perfecta para cualquier fan de Pokemon",

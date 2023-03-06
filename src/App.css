@@ -53,6 +53,7 @@ body{
 
 .icon-cart {
   margin-right: 2px;
+  font-size: 1.2rem;
 }
 
 .number-cart {
@@ -180,6 +181,10 @@ body{
   bottom: 8px;
 }
 
+.text-right::before {
+  content: "Please choose a product on the left";
+}
+
 .container-detail {
   height: 23rem;
   display: flex;
@@ -228,6 +233,7 @@ body{
 
 .btns {
   width: auto;
+  display: flex;
 }
 
 .btn-sub{
@@ -285,7 +291,7 @@ body{
   background-color: #A41BB9;
   width: 2.5rem;
   position: relative;
-  left: 70px;
+  right: 1.5rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -313,6 +319,10 @@ body{
   border: none;
 }
 
+.close-circle{
+  font-size: 5.5rem;
+}
+
 .close-product :active {
   transform: scale(0.95); 
 }
@@ -337,8 +347,8 @@ body{
 }
 
 .stock-item-cart {
-  width: 2.3rem;
-  height: 2.3rem;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
   font-size: larger;
 }
 
@@ -393,6 +403,10 @@ body{
   background-color: transparent;
 }
 
+.icon-trash{
+  font-size: 1.3rem !important;
+}
+
 .trash-item :active {
   transform: scale(0.95); 
 }
@@ -409,4 +423,213 @@ body{
 *::-webkit-scrollbar-thumb {
   background-color: #A41BB9;
   border-radius: 20px;
+}
+
+@media only screen and (max-width: 900px){
+
+  .container {
+    width: 100%;
+  }
+
+  .container-header {
+    padding: 0.5rem 0;
+    height: 7rem;
+    width: 100%;
+  }
+
+  .header-left {
+    width: 50%;
+    height: 100%;
+    margin-left: 10%;
+  }
+
+  .header-right {
+    width: 50%;
+    margin-right: 10%;
+  }
+
+  .cart {
+    width: auto;
+    height: 2.2rem;
+  }
+
+  .icon-cart {
+    margin-right: 2px;
+    font-size: 2.5rem !important;
+  }
+
+  .number-cart {
+    color: white;
+    font-size: 1.1rem;
+  }
+
+  .logo{
+    width: 3.5rem;
+    height: 3.5rem;
+    top: 3.5rem;
+    position: relative;
+  }
+
+  .container-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-left {
+    width: 80%;
+    margin: 0.5rem auto;
+  }
+
+  .title-store {
+    color: #A41BB9;  
+    position: relative;
+    top: 15px;
+    height: 20px;
+    font-size: 1.3rem;
+  }
+
+  .separator {
+    margin: 2rem 0;
+  }
+
+  .product-right {
+    width: 80%;
+    margin-top: 1rem;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .text-right {
+    font-size: 1rem;
+  }
+
+  .text-right::before {
+    content: "Choose a product at the top";
+  }
+
+  .btn-item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+  }
+
+  .pop {
+    width: 5.5rem;
+    text-align: center;
+    padding: 3px;
+  }
+
+  .one-product {
+    height: auto;
+  }
+
+  .pop-one {
+    width: 9rem;
+  }
+
+  .bar-name {
+    height: auto;
+  }
+
+  .item-name {
+    font-size: 1.2rem;
+  }
+
+  .point {
+    top: 1.7rem;
+  }
+
+  .btn-sub{
+    font-size: 1.8rem;
+    width: 3rem;
+  }
+
+  .btn-add{
+    font-size: 1.8rem;
+    width: 3rem;
+  }
+
+  .description {
+    color: #909090;
+    font-size: 1rem;
+  }
+
+  .stock {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.8rem;
+    bottom: 25% !important
+  }
+  .stock-detail {
+    bottom: 90% !important;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .add-cart{
+    width: 2.5rem;
+    height: auto;
+    padding: 0.4rem;
+    right: 1.5rem;
+  }
+
+  .icon-cart {
+    margin-right: 2px;
+    font-size: 1.4rem !important;
+  }
+  
+  .close-product {
+    width: 4rem;
+    left: 90%;
+    height: auto;
+  }
+
+  .close-circle{
+    font-size: 4rem;
+  }
+
+  .cart-active {
+    width: auto;
+    height: 2.2rem;
+  }
+
+  .close-cart {
+    height: auto;
+    width: 3rem;
+    font-size: 1.8rem !important;
+  }
+
+  .number-cart-active {
+    color: #A41BB9;
+    font-size: 1.1rem;
+  }
+
+  .subcontainer-cart {
+    height: 6.5rem;
+  }
+
+  .item-cart-left {
+    width: 16rem;
+  }
+
+  .pop-item-cart {
+    width: 8rem;
+    height: auto;
+  }
+
+  .icon-trash{
+    font-size: 3rem;
+  }
+
+  .cart-total{
+    font-size: 1.4rem;
+  }
+
 }

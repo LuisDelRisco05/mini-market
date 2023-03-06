@@ -21,9 +21,7 @@ function App() {
 
   useEffect( () => {
     
-    if(cart.length > 0){
-      saveDataStorage(cart, total)
-    }
+    saveDataStorage(cart, total) 
 
   }, [cart]);
 

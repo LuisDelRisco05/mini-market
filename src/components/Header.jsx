@@ -27,7 +27,6 @@ export const Header = () => {
                                 onClick={ startActiveShoppingCart }
                             >
                                 <GiShoppingCart
-                                    size={18} 
                                     color='white'
                                     className='icon-cart'
                                 />
@@ -38,7 +37,6 @@ export const Header = () => {
                         (
                             <div className='cart-active'>
                                 <GiShoppingCart
-                                    size={18} 
                                     color='#A41BB9'
                                     className='icon-cart'
                                 />

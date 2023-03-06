@@ -21,7 +21,7 @@ export const Products = ({ counter }) => {
               type="button"
               onClick={() => handleClick(item)}
             >
-              { product.id === item.id && <Stock position={'2rem'} unit={ counter } />}
+              { product.id === item.id && <Stock position={'1.5rem'} unit={ counter } />}
                 <img 
                     src={item.id} 
                     alt={item.name}

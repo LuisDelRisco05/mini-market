@@ -51,7 +51,7 @@ export const Detail = ({ counter, setCounter }) => {
 
   return (
     <div className="container-detail">
-        { Object.keys(product).length === 0 && !shoppingCart &&  <p className="text-right">Please choose a product on the left.</p>}
+        { Object.keys(product).length === 0 && !shoppingCart &&  <p className="text-right"></p>}
         { Object.keys(product).length > 0 && !shoppingCart
             &&
                 (   
@@ -62,8 +62,8 @@ export const Detail = ({ counter, setCounter }) => {
                             onClick={ handleClickCancel }
                         >
                             <AiFillCloseCircle
-                                size={30} 
                                 color='#909090'
+                                className="close-circle"
                             />
                         </button>
                         
@@ -82,18 +82,17 @@ export const Detail = ({ counter, setCounter }) => {
                                 <h4 className="price">${product.price}</h4>
                             </div>
                             
-                            <button 
-                                type='button' 
-                                className='cart add-cart'
-                                onClick={handleAddCart}
-                            >
-                                <MdAddShoppingCart
-                                    size={16} 
-                                    color='white'
-                                    className='icon-cart'
-                                />
-                            </button>
                             <div className="btns">
+                                <button 
+                                    type='button' 
+                                    className='cart add-cart'
+                                    onClick={handleAddCart}
+                                >
+                                    <MdAddShoppingCart
+                                        color='white'
+                                        className='icon-cart'
+                                    />
+                            </button>
                                 <button
                                     type="button" 
                                     className="btn-sub"
@@ -111,7 +110,7 @@ export const Detail = ({ counter, setCounter }) => {
                             <p className="description">{product.description}</p>
                             <hr className="separator" />
                         </div>
-                        <Stock position={'250px'} unit={ counter } />
+                        <Stock position={'250px'} unit={ counter } mobile='stock-detail' />
                     </div>
                 )
         }
@@ -142,7 +141,10 @@ export const Detail = ({ counter, setCounter }) => {
                                                 className="trash-item"
                                                 onClick={ () => handleClickTrash(item) }
                                             >
-                                                <BsFillTrash3Fill size={25} color="gray" />
+                                                <BsFillTrash3Fill 
+                                                    className="icon-trash"
+                                                    color="gray" 
+                                                />
                                             </button>
                                         </div>
                                         <hr className='separator-item' />
