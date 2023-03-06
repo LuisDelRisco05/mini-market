@@ -3,9 +3,11 @@ import {
   onAddProduct, 
   onCancelProduct, 
   onAddToCart, 
+  onDeleteItem,
   onTotal, 
   onActiveShoppingCart,
-  onDesactiveShoppingCart 
+  onDesactiveShoppingCart,
+  onUpdateStorage 
 } from "../store/product-slice";
 
 
@@ -27,6 +29,10 @@ export const useProduct = () => {
       dispatch( onAddToCart(product) )
     }
 
+    const startDeleteItem = (newCart, newTotal) => {
+      dispatch( onDeleteItem({newCart, newTotal}))
+    }
+
     const startTotal = (amount) => {
       dispatch( onTotal(amount) )
     }
@@ -36,6 +42,11 @@ export const useProduct = () => {
     }
     const startDesactiveShoppingCart = () => {
       dispatch( onDesactiveShoppingCart() )
+    }
+
+    const startUpdateStorage = (cartStorage, totalStorage) => {
+      // console.log(cartStorage, totalStorage);
+      dispatch( onUpdateStorage({ cartStorage, totalStorage }))
     }
 
 
@@ -52,8 +63,10 @@ export const useProduct = () => {
     startAddProduct,
     startCancelProduct,
     startAddToCart,
+    startDeleteItem,
     startTotal,
     startActiveShoppingCart,
-    startDesactiveShoppingCart
+    startDesactiveShoppingCart,
+    startUpdateStorage
   }
 }

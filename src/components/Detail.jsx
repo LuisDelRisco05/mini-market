@@ -9,9 +9,18 @@ import { BsFillTrash3Fill } from "react-icons/bs";
 export const Detail = ({ counter, setCounter }) => {
 
 
-    const { product, cart, shoppingCart, total, startAddToCart, startCancelProduct, startTotal } = useProduct();
+    const { 
+        product, 
+        cart, 
+        shoppingCart, 
+        total, 
+        startAddToCart, 
+        startDeleteItem,
+        startCancelProduct, 
+        startTotal 
+    } = useProduct();
 
-    const { id, name, unit, price} = product;
+    const { id, name, price} = product;
 
     const handleClick = (unit) => {
         setCounter(unit)
@@ -21,7 +30,8 @@ export const Detail = ({ counter, setCounter }) => {
         startAddToCart({
             id,
             name,
-            unit: counter
+            unit: counter,
+            price
         });
         const total = price * counter;
         startTotal(total)
@@ -32,6 +42,11 @@ export const Detail = ({ counter, setCounter }) => {
     const handleClickCancel = () => {
         setCounter(1);
         startCancelProduct();
+    }
+
+    const handleClickTrash = (product) => {
+        const newCart = cart.filter( item => item.id !== product.id );
+        startDeleteItem(newCart, product.unit * product.price)
     }
 
   return (
@@ -122,9 +137,13 @@ export const Detail = ({ counter, setCounter }) => {
                                                 </div>
                                                 
                                             </div>
-                                            <div className="trash-item">
+                                            <button 
+                                                type="button"
+                                                className="trash-item"
+                                                onClick={ () => handleClickTrash(item) }
+                                            >
                                                 <BsFillTrash3Fill size={25} color="gray" />
-                                            </div>
+                                            </button>
                                         </div>
                                         <hr className='separator-item' />
                                     </div>

@@ -21,6 +21,10 @@ export const productSlice = createSlice({
         onAddToCart: ( state, { payload }) => {
             state.cart = [...state.cart, payload]
         },
+        onDeleteItem: ( state, { payload }) => {
+            state.cart = payload.newCart;
+            state.total = state.total - payload.newTotal
+        },
         onTotal: ( state, { payload }) => {
             state.total = state.total + payload
         },
@@ -30,6 +34,10 @@ export const productSlice = createSlice({
         onDesactiveShoppingCart: ( state ) => {
             state.shoppingCart = false
         },
+        onUpdateStorage: ( state, { payload }) => {
+            state.cart = payload.cartStorage;
+            state.total = payload.totalStorage;
+        }
 
     }
 });
@@ -38,8 +46,10 @@ export const productSlice = createSlice({
 export const { 
     onAddProduct,  
     onCancelProduct, 
-    onAddToCart, 
+    onAddToCart,
+    onDeleteItem, 
     onTotal,
     onActiveShoppingCart,
-    onDesactiveShoppingCart 
+    onDesactiveShoppingCart,
+    onUpdateStorage 
 } = productSlice.actions;
