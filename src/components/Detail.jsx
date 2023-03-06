@@ -2,13 +2,14 @@ import { useProduct } from "../hooks/useProduct";
 import { Stock } from "./Stock";
 import { MdAddShoppingCart } from "react-icons/md";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { BsFillTrash3Fill } from "react-icons/bs";
 
 
 
 export const Detail = ({ counter, setCounter }) => {
 
 
-    const { product, startAddToCart, startCancelProduct, startTotal } = useProduct();
+    const { product, cart, shoppingCart, total, startAddToCart, startCancelProduct, startTotal } = useProduct();
 
     const { id, name, unit, price} = product;
 
@@ -24,19 +25,19 @@ export const Detail = ({ counter, setCounter }) => {
         });
         const total = price * counter;
         startTotal(total)
-        setCounter(0);
+        setCounter(1);
         startCancelProduct();
     }
 
     const handleClickCancel = () => {
-        setCounter(0);
+        setCounter(1);
         startCancelProduct();
     }
 
   return (
     <div className="container-detail">
-        { Object.keys(product).length === 0 && <p className="text-right">Please choose a product on the left.</p>}
-        { Object.keys(product).length > 1
+        { Object.keys(product).length === 0 && !shoppingCart &&  <p className="text-right">Please choose a product on the left.</p>}
+        { Object.keys(product).length > 0 && !shoppingCart
             &&
                 (   
                     <div>
@@ -95,10 +96,65 @@ export const Detail = ({ counter, setCounter }) => {
                             <p className="description">{product.description}</p>
                             <hr className="separator" />
                         </div>
-                        <Stock position={'16rem'} unit={ counter } />
+                        <Stock position={'250px'} unit={ counter } />
                     </div>
                 )
         }
+        {
+            (shoppingCart && cart.length > 0)
+                &&  (
+                        <div className={`${ cart.length > 3 && 'scroll-cart'}`}>
+                            {
+                                cart.map( (item, i) => (
+                                    <div 
+                                        key={item.id + i} 
+                                        className='container-item-cart'
+                                    >
+                                        <div className="subcontainer-cart">
+                                            <div className="item-cart-left">
+                                                <Stock unit={item.unit} size='stock-item-cart'/>
+                                                <div className="item-img-pop">
+                                                    <img 
+                                                        src={item.id} 
+                                                        alt={item.name}
+                                                        className="pop-item-cart" 
+                                                    />
+                                                </div>
+                                                
+                                            </div>
+                                            <div className="trash-item">
+                                                <BsFillTrash3Fill size={25} color="gray" />
+                                            </div>
+                                        </div>
+                                        <hr className='separator-item' />
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    )
+        }
+        { shoppingCart 
+            &&  (
+                    <div className="container-cart-total">
+                        <div className="cart-total">
+                            <p className="cart-total-text">Total:</p>
+                            <p className="cart-total-value">${total}</p>
+                        </div>
+                    </div>
+                )
+        }
+        {/* <form style={{ backgroundColor: 'red', width: '10rem', height: '1rem'}}>
+            <script
+                src="https://checkout.wompi.co/widget.js"
+                data-render="button"
+                data-public-key="pub_test_hrKeZIq39IkiyTviEjBMHcYL4cLNuUxR"
+                data-currency="COP"
+                data-amount-in-cents="4950000"
+                data-reference="4XMPGKWWPKWQ"
+                data-signature:integrity="37c8407747e595535433ef8f6a811d853cd943046624a0ec04662b17bbf33bf5"
+                >
+            </script>
+        </form> */}
     </div>
   )
 }

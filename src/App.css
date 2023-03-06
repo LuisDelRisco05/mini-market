@@ -13,33 +13,42 @@ body{
 .container-header {
   display: flex;
   padding-top: 20px;
+  height: 50px;
 }
 
 .header-left {
   width: 58%;
   margin-right: auto;
-  height: 25px;
+  height: 100%;
 }
 
 .header-right {
   width: 40%;
   display: flex;
   justify-content: end;
-  align-items: center;
-  height: 25px;
+  align-items: end;
+  height: 100%;
 }
 
 .cart {
   background-color: #A41BB9;
   width: auto;
-  height: 30px;
-  padding: 2px;
+  height: 22px;
+  padding: 0 6px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-radius: 1px;
   cursor: pointer;
   border: none;
+}
+
+.cart:hover {
+  background-color: #bb1ed3; 
+}
+
+.cart:active {
+  transform: scale(0.95); 
 }
 
 .icon-cart {
@@ -48,8 +57,45 @@ body{
 
 .number-cart {
   color: white;
-  font-size: 15px;
+  font-size: 13px;
 }
+
+.cart-active {
+  background-color: #F5EBF7;
+  width: auto;
+  height: 20px;
+  padding-left: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1px;
+  cursor: pointer;
+  border: 1px solid  rgba(164, 27, 185, 0.4);
+}
+
+.number-cart-active {
+  color: #A41BB9;
+  font-size: 13px;
+}
+
+.close-cart {
+  background-color: #A41BB9;
+  border: none;
+  color: white;
+  height: 100%;
+  width: 21px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.close-cart:hover {
+  background-color: #bb1ed3; 
+}
+
+.close-cart:active {
+  transform: scale(0.95); 
+}
+
 
 /* .icon-store { 
   background-color: #892F9F;
@@ -68,13 +114,14 @@ body{
   top: 15px;
   height: 20px;
   font-size: 0.8rem;
+  margin: 0;
 }
 
 .separator {
   height: 0.2px;
   background-color: #C2C2C2;
   opacity: 0.4;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 
 .container-body {
@@ -106,6 +153,10 @@ body{
   background-color: white;
 }
 
+.btn-item:active {
+  transform: scale(0.99); 
+}
+
 .active {
   border: 2px solid #D282DF;
   box-shadow: 0px 0px 4px 2px rgba(198,153,205,0.57);
@@ -130,7 +181,7 @@ body{
 }
 
 .container-detail {
-  height: 17rem;
+  height: 23rem;
   display: flex;
   flex-direction: column;
 }
@@ -173,7 +224,6 @@ body{
 
 .price {
   color: #A41BB9;
-  font-weight: 500;
 }
 
 .btns {
@@ -187,6 +237,15 @@ body{
   width: 25px;
   cursor: pointer;
 }
+
+.btn-sub:hover {
+  background-color: lightgray; 
+}
+
+.btn-sub:active {
+  transform: scale(0.95); 
+}
+
 .btn-add{
   background-color: #A41BB9;
   border: none;
@@ -194,6 +253,14 @@ body{
   width: 25px;
   color: white;
   cursor: pointer;
+}
+
+.btn-add:hover {
+  background-color: #bb1ed3; 
+}
+
+.btn-add:active {
+  transform: scale(0.95); 
 }
 
 .description {
@@ -225,6 +292,14 @@ body{
   height: 23px;
 }
 
+.add-cart:hover {
+  background-color: #bb1ed3; 
+}
+
+.add-cart:active {
+  transform: scale(0.95); 
+}
+
 .close-product {
   background-color: transparent;
   width: 2.5rem;
@@ -233,8 +308,88 @@ body{
   cursor: pointer;
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 23px;
   border: none;
 }
 
+.close-product :active {
+  transform: scale(0.95); 
+}
 
+.container-item-cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-cart-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 8rem;
+  margin-left: 8px;
+}
+
+.stock-item-cart {
+  width: 2.3rem;
+  height: 2.3rem;
+  font-size: larger;
+}
+
+.item-img-pop {
+  display: flex;
+  align-items: center;
+}
+
+.pop-item-cart {
+  width: 4rem;
+  height: 100%;
+}
+
+.separator-item {
+  height: 0.1px;
+  background-color: #C2C2C2;
+  opacity: 0.2;
+  margin: 12px 0;
+}
+
+.scroll-cart {
+  overflow-y: scroll;
+}
+
+.container-cart-total {
+  display: flex;
+  justify-content: end;
+}
+.cart-total{
+  display: flex;
+  width: auto;
+  padding: 0 2px;
+}
+
+.cart-total-text {
+  color: #bebebe;
+  font-weight: 600;
+}
+
+.cart-total-value {
+  color: #A41BB9;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+.subcontainer-cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.trash-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.trash-item :active {
+  transform: scale(0.95); 
+}

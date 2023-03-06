@@ -8,7 +8,7 @@ export const Products = ({ counter }) => {
   const { products, product,  startAddProduct } = useProduct();
 
   const handleClick = item => {
-    console.log('item', item);
+    // console.log('item', item);
     startAddProduct(item)
   }
 

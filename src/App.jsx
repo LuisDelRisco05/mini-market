@@ -11,7 +11,7 @@ function App() {
 
   const [ counter, setCounter ] = useState(1)
 
-  const { product } = useProduct();
+  const { product, shoppingCart } = useProduct();
 
   return (
     <div className="App container">
@@ -28,7 +28,8 @@ function App() {
 
         <div className='product-right'>
           <h4 className='title-store'>
-            { product.length === 1 ? 'Product' : ''}
+            { Object.keys(product).length > 0 && !shoppingCart ? 'Product' : ''}
+            { shoppingCart && 'Shopping Cart'}
           </h4>
           <hr className='separator' />
           <Detail counter={ counter } setCounter={ setCounter } />

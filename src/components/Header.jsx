@@ -4,7 +4,9 @@ import { useProduct } from '../hooks/useProduct';
 
 export const Header = () => {
 
-    const { total } = useProduct();
+    const { total, cart, shoppingCart, startActiveShoppingCart, startDesactiveShoppingCart } = useProduct();
+
+
 
   return (
     <div className='container-header'>
@@ -15,14 +17,51 @@ export const Header = () => {
             />
         </div>
         <div className='header-right'>
-            <button type='button' className='cart'>
-                <GiShoppingCart
-                    size={22} 
-                    color='white'
-                    className='icon-cart'
-                />
-                <p className='number-cart'>${total}</p>
-            </button>
+            {
+                !shoppingCart
+                    ?
+                        (
+                            <button 
+                                type='button' 
+                                className='cart'
+                                onClick={ startActiveShoppingCart }
+                            >
+                                <GiShoppingCart
+                                    size={18} 
+                                    color='white'
+                                    className='icon-cart'
+                                />
+                                <p className='number-cart'>${total}</p>
+                            </button>
+                        )
+                    :
+                        (
+                            <div className='cart-active'>
+                                <GiShoppingCart
+                                    size={18} 
+                                    color='#A41BB9'
+                                    className='icon-cart'
+                                />
+                                <p className='number-cart-active'>${total}</p>
+                                <button
+                                    type='button'
+                                    className='close-cart'
+                                    onClick={ startDesactiveShoppingCart }
+                                >
+                                    x
+                                </button>
+                            </div>
+
+                        )
+            }
+            {
+                (shoppingCart && cart.length > 0)
+                    &&   (
+                            <div>
+
+                            </div>
+                        )
+            }
         </div>
     </div>
   )
