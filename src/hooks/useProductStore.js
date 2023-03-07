@@ -11,7 +11,7 @@ import {
 } from "../store/product-slice";
 
 
-export const useProduct = () => {
+export const useProductStore = () => {
 
     const dispatch = useDispatch();
     const { products, product, cart, total, shoppingCart } = useSelector( state => state.product);

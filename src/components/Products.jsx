@@ -1,15 +1,25 @@
-import { useState } from 'react'
-import { useProduct } from "../hooks/useProduct"
+import React, { useState } from 'react'
+
+import { useProductStore } from '../hooks/useProductStore';
 import { Stock } from './Stock';
+
 
 
 export const Products = ({ counter }) => {
 
-  const { products, product,  startAddProduct } = useProduct();
+  const [ animation, setAnimation ] = useState(false);
+
+  const { products, product,  startAddProduct } = useProductStore();
+
 
   const handleClick = item => {
-    // console.log('item', item);
+    setAnimation(true);
     startAddProduct(item)
+
+    setTimeout(() => {
+      setAnimation(false);
+    }, 1500);
+
   }
 
   return (
@@ -17,7 +27,7 @@ export const Products = ({ counter }) => {
         {products.map(item => (
             <button 
               key={item.id} 
-              className={`btn-item ${product.id === item.id ? 'active' : 'inactive' }`}
+              className={`btn-item ${ product.id === item.id && animation && 'animate__animated animate__pulse'} ${product.id === item.id ? 'active' : 'inactive' }`}
               type="button"
               onClick={() => handleClick(item)}
             >

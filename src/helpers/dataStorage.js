@@ -1,9 +1,10 @@
-import { useProduct } from "../hooks/useProduct"
+
+import { useProductStore } from "../hooks/useProductStore";
 
 
 export const dataStorage = () => {
 
-    const { startUpdateStorage } = useProduct();
+    const { startUpdateStorage } = useProductStore();
 
     const saveDataStorage = ( cart, total ) => {
         localStorage.setItem('cart', JSON.stringify(cart));

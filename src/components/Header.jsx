@@ -1,10 +1,17 @@
+import React from 'react'
+import { useProductStore } from '../hooks/useProductStore';
 import { GiShoppingCart} from 'react-icons/gi';
 import Logo from '../assets/logo.jpg'
-import { useProduct } from '../hooks/useProduct';
+
 
 export const Header = () => {
 
-    const { total, cart, shoppingCart, startActiveShoppingCart, startDesactiveShoppingCart } = useProduct();
+    const { 
+        total, 
+        shoppingCart, 
+        startActiveShoppingCart, 
+        startDesactiveShoppingCart 
+    } = useProductStore();
 
 
 
@@ -50,14 +57,6 @@ export const Header = () => {
                                 </button>
                             </div>
 
-                        )
-            }
-            {
-                (shoppingCart && cart.length > 0)
-                    &&   (
-                            <div>
-
-                            </div>
                         )
             }
         </div>
