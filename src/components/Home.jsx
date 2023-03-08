@@ -2,7 +2,7 @@ import React,{ useEffect, useState } from 'react';
 import { Detail, Header, Products } from './';
 import { dataStorage } from '../helpers/dataStorage';
 import { useProductStore } from '../hooks/useProductStore';
-import PropTypes from 'prop-types';
+
 
 export const Home = () => {
 
@@ -49,13 +49,4 @@ export const Home = () => {
   )
 }
 
-Home.propTypes = {
-  counter: PropTypes.number.isRequired,
-  setCounter: PropTypes.func.isRequired,
-  product: PropTypes.object.isRequired,
-  shoppingCart: PropTypes.bool.isRequired,
-  cart: PropTypes.array.isRequired,
-  total: PropTypes.number.isRequired,
-  saveDataStorage: PropTypes.func.isRequired,
-  getDataStorage: PropTypes.func.isRequired
-}
+
