@@ -85,6 +85,7 @@ export const OneItem = ({ counter, setCounter }) => {
                             type="button"
                             className="btn-add"
                             onClick={ () => handleClick(counter + 1) }
+                           
                         >+</button>
                     </div>
                 </div>

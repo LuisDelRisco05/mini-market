@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
-
 import { useProductStore } from '../hooks/useProductStore';
 import { Stock } from './Stock';
-
+import PropTypes from 'prop-types';
 
 
 export const Products = ({ counter }) => {
 
   const [ animation, setAnimation ] = useState(false);
 
-  const { products, product,  startAddProduct } = useProductStore();
+  const { products, product, startAddProduct } = useProductStore();
 
 
   const handleClick = item => {
@@ -42,3 +41,7 @@ export const Products = ({ counter }) => {
     </div>
   )
 }
+
+Products.propTypes = {
+  counter: PropTypes.number.isRequired
+};

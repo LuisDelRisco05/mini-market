@@ -78,8 +78,6 @@ describe('Test productSlice', () => {
 
 
 
-
-
  
 
 });

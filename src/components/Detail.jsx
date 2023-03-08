@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useProductStore } from '../hooks/useProductStore';
 import { OneItem, ItemList, Payment } from './';
+import PropTypes from 'prop-types';
 
 
 export const Detail = ({ counter, setCounter }) => {
@@ -14,19 +15,8 @@ export const Detail = ({ counter, setCounter }) => {
         total, 
     } = useProductStore();
 
-
-    // useEffect(() => {
-    //     const script = document.createElement('script');
-    //     script.src = "https://checkout.wompi.co/widget.js";
-    //     script.async = true;
-    //     script.setAttribute("data-render", "button");
-    //     script.setAttribute("data-public-key", "pub_test_hrKeZIq39IkiyTviEjBMHcYL4cLNuUxR");
-    //     script.setAttribute("data-currency", "COP");
-    //     script.setAttribute("data-amount-in-cents", "4950000");
-    //     script.setAttribute("data-reference", "4XMPGKWWPKWQ");
-    //     script.setAttribute("data-signature:integrity", "37c8407747e595535433ef8f6a811d853cd943046624a0ec04662b17bbf33bf5");
-    //     document.body.appendChild(script);
-    // }, []);
+    const numero = total;
+    const numeroFormateado = numero.toString().replace(/\./g, '') + '00';
 
   return (
     <div className="container-detail">
@@ -58,7 +48,7 @@ export const Detail = ({ counter, setCounter }) => {
                     <Payment
                         publicKey="pub_test_hrKeZIq39IkiyTviEjBMHcYL4cLNuUxR"
                         currency="COP"
-                        amountInCents="4950000"
+                        amountInCents={numeroFormateado}
                         reference="4XMPGKWWPKWQ"
                         signatureIntegrity="37c8407747e595535433ef8f6a811d853cd943046624a0ec04662b17bbf33bf5"
                     />
@@ -68,4 +58,9 @@ export const Detail = ({ counter, setCounter }) => {
     </div>
   )
 }
+
+Detail.propTypes = {
+    counter: PropTypes.number.isRequired, 
+    setCounter: PropTypes.func.isRequired, 
+};
 

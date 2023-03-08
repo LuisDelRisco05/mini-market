@@ -13,13 +13,14 @@ import {
 
 export const useProductStore = () => {
 
+  // Funciones que llaman a las acciones a través del dispatch para realizar cambios en el store
+
     const dispatch = useDispatch();
     const { products, product, cart, total, shoppingCart } = useSelector( state => state.product);
 
     const startAddProduct = (item) => {
       dispatch( onAddProduct(item) )
     }
-
 
     const startCancelProduct = () => {
       dispatch( onCancelProduct() )
@@ -45,7 +46,6 @@ export const useProductStore = () => {
     }
 
     const startUpdateStorage = (cartStorage, totalStorage) => {
-      // console.log(cartStorage, totalStorage);
       dispatch( onUpdateStorage({ cartStorage, totalStorage }))
     }
 
